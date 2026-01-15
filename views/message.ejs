@@ -1,10 +1,10 @@
 <div class="message-container">
-    <div class="date">
-        <% let date = message.added.toLocaleString() %>
-        <%= date %>
-    </div>
+
     <div class="user">
-        <%= message.user %>
+        <%= message.user %> <span class="at">@</span> <span class="date">
+                <% let date=message.added.toLocaleString() %>
+                    <%= date %>
+            </span>
     </div>
     <div class="text">
         <%= message.text %>

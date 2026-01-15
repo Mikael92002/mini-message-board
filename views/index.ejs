@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Message Board</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <% messageArray.forEach((message)=>{%>
-<%- include('message', {message: message}) %>
-            <%})%>
-    </div>
+    <%- include('header') %>
+        <div>
+            <% messageArray.forEach((message)=>{%>
+                <%- include('message', {message: message}) %>
+                    <%})%>
+        </div>
+        <a class="new" href="/new">New Message</a>
 </body>
 </html>

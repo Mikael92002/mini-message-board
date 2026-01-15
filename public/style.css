@@ -1,3 +1,41 @@
-body {
+.message-container {
+    font-family: sans-serif;
+}
+
+.text {
+    background-color: greenyellow;
+    margin: 2px;
+    border-radius: 10px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.date {
+    color: grey;
+}
+
+.at {
     color: red;
+}
+
+.user {
+    font-weight: 900;
+}
+
+.new {
+    display: block;
+    margin-top: 10px;
+    width: fit-content;
+    font-size: large;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: rgb(0, 174, 255);
+    font-weight: 900;
+    padding: 2px;
+    color: black;
+}
+.title{
+    text-align: center;
+    font-size: xx-large;
+    margin-bottom: 10px;
 }
