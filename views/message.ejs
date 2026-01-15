@@ -1,4 +1,8 @@
 <div class="message-container">
+    <div class="date">
+        <% let date = message.added.toTimeString() %>
+        <%= date %>
+    </div>
     <div class="user">
         <%= message.user %>
     </div>
