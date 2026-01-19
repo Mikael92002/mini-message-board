@@ -1,5 +1,5 @@
 const { body, validationResult, matchedData } = require("express-validator");
-const messages = require("../db/messagesArray");
+const dbQueries = require("../db/queries");
 
 const validateForm = [
   body("name")
@@ -15,14 +15,16 @@ const validateForm = [
 
 exports.newMessagePost = [
   validateForm,
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty) {
       return res.status(400).send(errors.array());
     }
     const { name, message } = matchedData(req);
+    const date = new Date(Date.now()).toISOString();
     // convert to sql:
-    messages.push({ text: message, user: name, added: new Date(Date.now()) });
+    await dbQueries.insertMessage(name, message, date);
+    
     res.redirect("/");
   },
 ];

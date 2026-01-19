@@ -1,6 +1,8 @@
-const messages = require("../db/messagesArray");
+const dbQueries = require("../db/queries");
 
-exports.indexMessagesGet = (req, res) => {
-    // messages must be converted to sql (getAllMessages)
-  res.render("index", { messageArray: messages });
+exports.indexMessagesGet = async (req, res) => {
+  // messages must be converted to sql (getAllMessages)
+  //   res.render("index", { messageArray: messages });
+  const messagesArray = await dbQueries.getAllRows()
+  res.render("index", {messageArray: messagesArray})
 };
