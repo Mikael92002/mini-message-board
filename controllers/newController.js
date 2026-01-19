@@ -17,7 +17,7 @@ exports.newMessagePost = [
   validateForm,
   async (req, res) => {
     const errors = validationResult(req);
-    if (!errors.isEmpty) {
+    if (!errors.isEmpty()) {
       return res.status(400).send(errors.array());
     }
     const { name, message } = matchedData(req);
